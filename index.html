@@ -8,80 +8,79 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body class="min-vh-100 bg-info d-flex flex-column justify-content-between">
-    <header class="navbar bg-dark">
+<body class="bg-dark-subtle container-fluid">
+    <header class="navbar bg-dark row">
         <!-- Navbar -->
-        <h1 class="navbar-brand ms-2 text-white">Weathervane</h1>
+        <h1 class="navbar-brand text-white col-12 col-md-1 text-center">Weathervane</h1>
         <!-- Search and Controls -->
-        <form class="d-flex me-2" role="search">
+        <form class="d-flex col-12 col-md-4" role="search">
             <!-- Temperature display toggle -->
             <button class="btn btn-outline-light me-2" id="toggle-temperature" class="btn">C&deg;</button>
             <!-- City Search -->
-            <input class="form-control me-2" type="text" name="search-city" id="search-city" placeholder="City search" />
-            <button class="btn btn-outline-success">🔍</button>
+            <div class="input-group">
+                <input class="form-control" type="text" name="city-search" id="search-field" placeholder="City search" />
+                <button class="btn bg-white" id="search-submit">🔍</button>
+            </div>
         </form>
     </header>
-    <main class="container-fluid flex-grow-1">
-        <!-- Layout control div -->
-        <div class="row">
-            <section class="bg-warning col-3">
-                <h2>History</h2>
-                <ul>
-                    <!-- History List -->
-                    <li><button>Sample 1</button></li>
-                    <li><button>Sample 2</button></li>
-                    <li><button>Sample 3</button></li>
-                    <li><button>Sample 4</button></li>
-                    <li><button>Sample 5</button></li>
-                </ul>
-            </section>
-            <section class="bg-success col-9 d-flex flex-wrap">
-                <h2 class="w-100">Sydney</h2>
-                <article id="card-weather-current" class="col-4">
-                    <!-- Current Card -->
-                    <h3>Monday</h3>
+    <main class="row">
+        <section class="bg-warning">
+            <h2>History</h2>
+            <ul>
+                <!-- History List -->
+                <li><button>Sample 1</button></li>
+                <li><button>Sample 2</button></li>
+                <li><button>Sample 3</button></li>
+                <li><button>Sample 4</button></li>
+                <li><button>Sample 5</button></li>
+            </ul>
+        </section>
+        <section class="bg-success">
+            <h2>Sydney</h2>
+            <article id="card-weather-current">
+                <!-- Current Card -->
+                <h3>Monday</h3>
+                <h4>24&deg;C</h4>
+                <div>💧 53%</div>
+                <div>💨 2KM/h</div>
+                <div>🧭 East</div>
+            </article>
+            <article id="cardset-weather-forecast">
+                <!-- Forecast Cards -->
+                <div id="card-forecast-1">
+                    <h3>Tuesday</h3>
                     <h4>24&deg;C</h4>
                     <div>💧 53%</div>
                     <div>💨 2KM/h</div>
                     <div>🧭 East</div>
-                </article>
-                <article id="cardset-weather-forecast" class="col-8 d-flex justify-content-around">
-                    <!-- Forecast Cards -->
-                    <div id="card-forecast-1">
-                        <h3>Tuesday</h3>
-                        <h4>24&deg;C</h4>
-                        <div>💧 53%</div>
-                        <div>💨 2KM/h</div>
-                        <div>🧭 East</div>
-                    </div>
-                    <div id="card-forecast-2">
-                        <h3>Wednesday</h3>
-                        <h4>24&deg;C</h4>
-                        <div>💧 53%</div>
-                        <div>💨 2KM/h</div>
-                        <div>🧭 East</div>
-                    </div>
-                    <div id="card-forecast-3">
-                        <h3>Thursday</h3>
-                        <h4>24&deg;C</h4>
-                        <div>💧 53%</div>
-                        <div>💨 2KM/h</div>
-                        <div>🧭 East</div>
-                    </div>
-                    <div id="card-forecast-4">
-                        <h3>Friday</h3>
-                        <h4>24&deg;C</h4>
-                        <div>💧 53%</div>
-                        <div>💨 2KM/h</div>
-                        <div>🧭 East</div>
-                    </div>
-                </article>
-            </section>
-        </div>
+                </div>
+                <div id="card-forecast-2">
+                    <h3>Wednesday</h3>
+                    <h4>24&deg;C</h4>
+                    <div>💧 53%</div>
+                    <div>💨 2KM/h</div>
+                    <div>🧭 East</div>
+                </div>
+                <div id="card-forecast-3">
+                    <h3>Thursday</h3>
+                    <h4>24&deg;C</h4>
+                    <div>💧 53%</div>
+                    <div>💨 2KM/h</div>
+                    <div>🧭 East</div>
+                </div>
+                <div id="card-forecast-4">
+                    <h3>Friday</h3>
+                    <h4>24&deg;C</h4>
+                    <div>💧 53%</div>
+                    <div>💨 2KM/h</div>
+                    <div>🧭 East</div>
+                </div>
+            </article>
+        </section>
     </main>
-    <footer>
+    <footer class="bg-dark row">
         <!-- Attributions -->
-        <span>Weather data provided by OpenWeather</span>
+        <span class="text-light">Weather data provided by OpenWeather</span>
     </footer>
     <!-- Script Initialisers - Order: Bootstrap, jQuery, Custom -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
