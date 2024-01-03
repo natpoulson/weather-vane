@@ -24,21 +24,34 @@
         </form>
     </header>
     <main class="row">
-        <section class="bg-warning col-12 col-md-3">
-            <h2>History</h2>
-            <div class="list-group pb-2">
-                <li class="list-group-item">Sample Item 1</li>
-                <li class="list-group-item">Sample Item 2</li>
-                <li class="list-group-item">Sample Item 3</li>
-                <li class="list-group-item">Sample Item 4</li>
-                <li class="list-group-item">Sample Item 5</li>
+        <section id="history-sidebar" class="bg-white col-3">
+            <h2 class="section-underline">History</h2>
+            <p class="text-secondary text-center mt-4">
+                No recent locations.<br />
+                Try searching for one.
+            </p>
+            <div class="list-group pb-2" hidden>
+                <!-- Items to be added with this syntax
+                    <li class="list-group-item list-group-item-action" data-latitude="" data-longtitude="">{City Name}</li>
+                -->
             </div>
         </section>
-        <section class="bg-success col-12 col-md-9">
-            <h2>Sydney</h2>
+        <section class="bg-secondary-emphasis col-12 col-md-9">
+            <div class="row justify-content-between">
+                <!-- City Header with responsive mode dropdown (Hidden by default) -->
+                <h2 class="col-9 col-md-12 flex-grow-1 section-underline"><!-- City Name Here --></h2>
+                <div id="history-dropdown" class="col-2 dropdown me-3" hidden>
+                    <button class="btn dropdown-toggle btn-outline-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">History</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <!-- Items to be added with this syntax
+                            <li class="dropdown-item" data-latitude="" data-longtitude="">{City Name}</li> 
+                        -->
+                    </ul>
+                </div>
+            </div>
             <div class="row">
                 <!-- Current Card -->
-                <article id="card-weather-current" class="col-12 col-md-12 col-lg-4">
+                <article id="card-weather-current" class="col-12 col-md-12 col-lg-4 weather-card-current">
                     <h3>Monday</h3>
                     <h4>24&deg;C</h4>
                     <div>💧 53%</div>
@@ -46,32 +59,32 @@
                     <div>🧭 East</div>
                 </article>
                 <!-- Forecast Cards -->
-                <article id="cardset-weather-forecast" class="col-12 col-lg-8">
+                <article id="cardset-weather-forecast" class="col-12 col-lg-8 gx-md-2">
                     <div class="row">
-                        <div id="card-forecast-1" class="col-12 col-md-3">
-                            <h3>Tuesday</h3>
-                            <h4>24&deg;C</h4>
+                        <div id="card-forecast-1" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Tuesday</h3>
+                            <h5>24&deg;C</h4>
                             <div>💧 53%</div>
                             <div>💨 2KM/h</div>
                             <div>🧭 East</div>
                         </div>
-                        <div id="card-forecast-2" class="col-12 col-md-3">
-                            <h3>Wednesday</h3>
-                            <h4>24&deg;C</h4>
+                        <div id="card-forecast-2" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Wednesday</h3>
+                            <h5>24&deg;C</h4>
                             <div>💧 53%</div>
                             <div>💨 2KM/h</div>
                             <div>🧭 East</div>
                         </div>
-                        <div id="card-forecast-3" class="col-12 col-md-3">
-                            <h3>Thursday</h3>
-                            <h4>24&deg;C</h4>
+                        <div id="card-forecast-3" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Thursday</h3>
+                            <h5>24&deg;C</h4>
                             <div>💧 53%</div>
                             <div>💨 2KM/h</div>
                             <div>🧭 East</div>
                         </div>
-                        <div id="card-forecast-4" class="col-12 col-md-3">
-                            <h3>Friday</h3>
-                            <h4>24&deg;C</h4>
+                        <div id="card-forecast-4" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Friday</h3>
+                            <h5>24&deg;C</h4>
                             <div>💧 53%</div>
                             <div>💨 2KM/h</div>
                             <div>🧭 East</div>
