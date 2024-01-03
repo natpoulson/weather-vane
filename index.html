@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weathervane</title>
+    <!-- CSS Initialisers - Order: Bootstrap, Custom -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body class="bg-dark-subtle container-fluid">
+    <header class="navbar bg-dark row">
+        <!-- Navbar -->
+        <h1 class="navbar-brand text-white col-12 col-md-1 text-center">Weathervane</h1>
+        <!-- Search and Controls -->
+        <form class="d-flex col-12 col-md-4" role="search">
+            <!-- Temperature display toggle -->
+            <button class="btn btn-outline-light me-2" id="toggle-temperature" class="btn">C&deg;</button>
+            <!-- City Search -->
+            <div class="input-group">
+                <input class="form-control" type="text" name="city-search" id="search-field" placeholder="City search" />
+                <button class="btn bg-white" id="search-submit">🔍</button>
+            </div>
+        </form>
+    </header>
+    <main class="row">
+        <section id="history-sidebar" class="bg-white col-3">
+            <h2 class="section-underline">History</h2>
+            <p class="text-secondary text-center mt-4">
+                No recent locations.<br />
+                Try searching for one.
+            </p>
+            <div class="list-group pb-2" hidden>
+                <!-- Items to be added with this syntax
+                    <li class="list-group-item list-group-item-action" data-latitude="" data-longtitude="">{City Name}</li>
+                -->
+            </div>
+        </section>
+        <section class="bg-secondary-emphasis col-12 col-md-9">
+            <div class="row justify-content-between">
+                <!-- City Header with responsive mode dropdown (Hidden by default) -->
+                <h2 class="col-9 col-md-12 flex-grow-1 section-underline"><!-- City Name Here --></h2>
+                <div id="history-dropdown" class="col-2 dropdown me-3" hidden>
+                    <button class="btn dropdown-toggle btn-outline-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">History</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <!-- Items to be added with this syntax
+                            <li class="dropdown-item" data-latitude="" data-longtitude="">{City Name}</li> 
+                        -->
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Current Card -->
+                <article id="card-weather-current" class="col-12 col-md-12 col-lg-4 weather-card-current">
+                    <h3>Monday</h3>
+                    <h4>24&deg;C</h4>
+                    <div>💧 53%</div>
+                    <div>💨 2KM/h</div>
+                    <div>🧭 East</div>
+                </article>
+                <!-- Forecast Cards -->
+                <article id="cardset-weather-forecast" class="col-12 col-lg-8 gx-md-2">
+                    <div class="row">
+                        <div id="card-forecast-1" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Tuesday</h3>
+                            <h5>24&deg;C</h4>
+                            <div>💧 53%</div>
+                            <div>💨 2KM/h</div>
+                            <div>🧭 East</div>
+                        </div>
+                        <div id="card-forecast-2" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Wednesday</h3>
+                            <h5>24&deg;C</h4>
+                            <div>💧 53%</div>
+                            <div>💨 2KM/h</div>
+                            <div>🧭 East</div>
+                        </div>
+                        <div id="card-forecast-3" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Thursday</h3>
+                            <h5>24&deg;C</h4>
+                            <div>💧 53%</div>
+                            <div>💨 2KM/h</div>
+                            <div>🧭 East</div>
+                        </div>
+                        <div id="card-forecast-4" class="col-12 col-md-3 weather-card-forecast">
+                            <h4>Friday</h3>
+                            <h5>24&deg;C</h4>
+                            <div>💧 53%</div>
+                            <div>💨 2KM/h</div>
+                            <div>🧭 East</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark row">
+        <!-- Attributions -->
+        <span class="text-light">Weather data provided by OpenWeather</span>
+    </footer>
+    <!-- Script Initialisers - Order: Bootstrap, jQuery, Custom -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
