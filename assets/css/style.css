@@ -1,0 +1,17 @@
+:root {
+    --bg-night: hsl(220, 68%, 18%);
+    --fg-night: hsl(220, 0%, 100%);
+}
+
+
+.section-underline:not(:empty) {
+    /* The :not(:empty) pseudo selector makes sure this underline effect doesn't appear on elements with no content
+        Namely used to hide the City header when nothing has been searched or selected */
+    padding-bottom: 0.5rem;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.weather-card-current {
+    border-radius: 10px;
+}
